@@ -9,10 +9,12 @@
         "type": "local-userpass",
         "disabled": false,
         "config": {
-            "autoConfirm": false,
+            "autoConfirm": true,
             "emailConfirmationUrl": "https://www.SilentAway/com/confirmEmail",
+            "resetFunctionName": "resetFunc",
             "resetPasswordUrl": "https://www.SilentAway/com/resetPassword",
-            "runConfirmationFunction": false
+            "runConfirmationFunction": false,
+            "runResetFunction": true
         }
     }
 }

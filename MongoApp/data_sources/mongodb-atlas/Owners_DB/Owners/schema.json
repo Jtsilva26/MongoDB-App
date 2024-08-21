@@ -1,0 +1,7 @@
+{
+    "ownerName": "string",
+    "entityType": "string",
+    "ownerType": "string",
+    "address": "string",
+    "totalLandHoldings": "number"
+}

@@ -1,0 +1,12 @@
+{
+    "name": "string",
+    "owner": "objectId",
+    "legalEntity": "string",
+    "netMineralAcres": "number",
+    "mineralOwnerRoyalty": "number",
+    "sectionName": "string",
+    "section": "string",
+    "township": "string",
+    "range": "string",
+    "titleSource": "string"
+}
