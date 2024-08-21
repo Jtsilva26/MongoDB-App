@@ -1,0 +1,40 @@
+{
+    "database": "Owners_DB",
+    "collection": "Owners",
+    "roles": [
+        {
+            "name": "denyAllAccess",
+            "apply_when": {
+                "roles": [
+                    {
+                        "name": "ownerRole",
+                        "applyWhen": {},
+                        "read": {
+                            "%%true": true
+                        },
+                        "write": {
+                            "%%true": true
+                        },
+                        "insert": {
+                            "%%true": true
+                        },
+                        "delete": {
+                            "%%true": true
+                        },
+                        "fields": {},
+                        "additionalFields": {}
+                    }
+                ]
+            },
+            "document_filters": {
+                "read": false,
+                "write": false
+            },
+            "insert": false,
+            "delete": false,
+            "search": false,
+            "read": true,
+            "write": true
+        }
+    ]
+}
