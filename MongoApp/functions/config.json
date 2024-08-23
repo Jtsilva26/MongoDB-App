@@ -21,5 +21,10 @@
         "name": "getLandHoldingById",
         "private": false,
         "disable_arg_logs": true
+    },
+    {
+        "name": "totalLandHoldings",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
