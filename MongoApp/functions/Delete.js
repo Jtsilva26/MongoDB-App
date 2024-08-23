@@ -5,7 +5,7 @@ exports = async function(ownerId) {
 
     const result = await ownersCollection.deleteOne({ _id: BSON.ObjectId(ownerId) });
   
-    if (result.deletedCount > 0) {
+    if (result.deletedCount >= 0) {
         await landHoldingsCollection.deleteMany({ ownerId: BSON.ObjectId(ownerId) });
     }
   
