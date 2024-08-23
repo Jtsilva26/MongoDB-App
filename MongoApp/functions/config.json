@@ -16,5 +16,10 @@
         "name": "getOwners",
         "private": false,
         "disable_arg_logs": true
+    },
+    {
+        "name": "getLandHoldingById",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
