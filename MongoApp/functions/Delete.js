@@ -3,11 +3,15 @@ exports = async function(ownerId) {
     const ownersCollection = mongo.db("Owners_DB").collection("Owners");
     const landHoldingsCollection = mongo.db("Owners_DB").collection("landHoldings");
 
-    const result = await ownersCollection.deleteOne({ _id: BSON.ObjectId(ownerId) });
+    const ownerObjectId = BSON.ObjectId(ownerId);
+    const result = await ownersCollection.deleteOne({ _id: ownerObjectId });
   
+    let deletedCount = 0;
+
     if (result.deletedCount > 0) {
-        await landHoldingsCollection.deleteMany({ ownerId: BSON.ObjectId(ownerId) });
+        const deleteResult = await landHoldingsCollection.deleteMany({ ownerId: ownerObjectId });
+        deletedCount = deleteResult.deletedCount;
     }
   
-    return result;
+    return { deletedCount };
 };
