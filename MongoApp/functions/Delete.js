@@ -1,19 +1,13 @@
-exports = async function(ownerId) {
+exports = async function({ ownerId }) {
     const mongo = context.services.get("mongodb-atlas");
     const ownersCollection = mongo.db("Owners_DB").collection("Owners");
-    const landHoldingsCollection = mongo.db("Owners_DB").collection("landHoldings");
+    const landHoldingsCollection = mongo.db("Owners_DB").collection("LandHoldings");
 
-    // Convert ownerId to ObjectId
-    const ownerObjectId = BSON.ObjectId(ownerId); // Ensure ownerId is a valid ObjectId
-    const result = await ownersCollection.deleteOne({ _id: ownerObjectId });
-  
-    let deletedCount = 0;
+    // Delete all land holdings associated with the owner
+    await landHoldingsCollection.deleteMany({ ownerId: ownerId });
 
-    if (result.deletedCount > 0) {
-        // Delete associated land holdings
-        const deleteResult = await landHoldingsCollection.deleteMany({ ownerId: ownerObjectId });
-        deletedCount = deleteResult.deletedCount; // Get number of land holdings deleted
-    }
-  
-    return { deletedCount }; // Return the deleted count for both owner and land holdings
+    // Delete the owner
+    await ownersCollection.deleteOne({ _id: ownerId });
+
+    return { status: "success", message: "Owner and associated land holdings deleted successfully." };
 };
