@@ -7,7 +7,7 @@ exports = async function({ ownerId }) {
     await landHoldingsCollection.deleteMany({ ownerId: ownerId });
 
     // Delete the owner
-    const deleteOwnerResult = await ownersCollection.deleteOne({ _id: ownerId });
+    const deleteOwnerResult = await ownersCollection.deleteOne({ _id: BSON.ObjectId(ownerId) });
 
     return { status: "success", message: "Owner and associated land holdings deleted successfully." };
 };
