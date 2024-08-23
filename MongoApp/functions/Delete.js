@@ -3,11 +3,9 @@ exports = async function({ ownerId }) {
     const ownersCollection = mongo.db("Owners_DB").collection("Owners");
     const landHoldingsCollection = mongo.db("Owners_DB").collection("LandHoldings");
 
-    const { ObjectId } = require('mongodb');
-
     try {
-        // Convert the ownerId to ObjectId
-        const ownerObjectId = new ObjectId(ownerId);
+        // ownerId should already be an ObjectId if passed correctly
+        const ownerObjectId = BSON.ObjectId(ownerId);
 
         // Delete all land holdings associated with the owner
         await landHoldingsCollection.deleteMany({ ownerId: ownerObjectId });
