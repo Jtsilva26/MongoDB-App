@@ -3,36 +3,15 @@
     "collection": "Owners",
     "roles": [
         {
-            "name": "denyAllAccess",
-            "apply_when": {
-                "roles": [
-                    {
-                        "name": "ownerRole",
-                        "applyWhen": {},
-                        "read": {
-                            "%%true": true
-                        },
-                        "write": {
-                            "%%true": true
-                        },
-                        "insert": {
-                            "%%true": true
-                        },
-                        "delete": {
-                            "%%true": true
-                        },
-                        "fields": {},
-                        "additionalFields": {}
-                    }
-                ]
-            },
+            "name": "readAndWriteAll",
+            "apply_when": {},
             "document_filters": {
-                "read": false,
-                "write": false
+                "read": true,
+                "write": true
             },
-            "insert": false,
-            "delete": false,
-            "search": false,
+            "insert": true,
+            "delete": true,
+            "search": true,
             "read": true,
             "write": true
         }
