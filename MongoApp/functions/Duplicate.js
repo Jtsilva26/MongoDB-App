@@ -8,7 +8,7 @@ exports = async function({ ownerName, entityType, ownerType, address, totalLandH
     });
 
     if (existingOwner) {
-        throw new Error("An Owner with the same Name and Address already exists.");
+        throw new Error("exists");
     }
 
     await collection.insertOne({
