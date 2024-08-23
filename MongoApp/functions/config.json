@@ -11,5 +11,10 @@
     {
         "name": "resetFunc",
         "private": true
+    },
+    {
+        "name": "getOwners",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
