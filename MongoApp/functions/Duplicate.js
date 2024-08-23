@@ -9,6 +9,6 @@ exports = async function({ name, size }) {
     }
 
     // Insert new land holding
-    await collection.insertOne({ name, size });
-    return { status: "success", message: "Land holding created successfully!" };
+    const result = await collection.insertOne({ name, size });
+    return { status: "success", message: "Land holding created successfully!", id: result.insertedId };
 };
