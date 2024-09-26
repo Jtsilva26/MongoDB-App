@@ -4,7 +4,7 @@ exports = async function({ ownerId }) {
     const landHoldingsCollection = mongo.db("Owners_DB").collection("LandHoldings");
 
     // Delete all land holdings associated with the owner
-    await landHoldingsCollection.deleteMany({ ownerId: BSON.ObjectId(ownerId) });
+    await landHoldingsCollection.deleteMany({ ownerId: ownerId });
 
     // Delete the owner
     const deleteOwnerResult = await ownersCollection.deleteOne({ _id: BSON.ObjectId(ownerId) });
