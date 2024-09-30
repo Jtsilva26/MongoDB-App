@@ -1,16 +1,5 @@
 {
     "bsonType": "object",
-    "required": [
-        "name",
-        "owner",
-        "legalEntity",
-        "netMineralAcres",
-        "mineralOwnerRoyalty",
-        "section",
-        "township",
-        "range",
-        "titleSource"
-    ],
     "properties": {
         "name": {
             "bsonType": "string"

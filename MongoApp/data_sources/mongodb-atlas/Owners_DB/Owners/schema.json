@@ -1,12 +1,5 @@
 {
     "bsonType": "object",
-    "required": [
-        "ownerName",
-        "entityType",
-        "ownerType",
-        "address",
-        "totalLandHoldings"
-    ],
     "properties": {
         "ownerName": {
             "bsonType": "string"
