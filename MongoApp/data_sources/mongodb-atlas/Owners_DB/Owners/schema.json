@@ -24,7 +24,10 @@
             "bsonType": "number"
         },
         "fileUrl": {
-            "bsonType": "array"
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            }
         }
     }
 }
