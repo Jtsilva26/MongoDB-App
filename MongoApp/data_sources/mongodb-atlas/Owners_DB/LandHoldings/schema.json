@@ -1,12 +1,49 @@
 {
-    "name": "string",
-    "owner": "objectId",
-    "legalEntity": "string",
-    "netMineralAcres": "number",
-    "mineralOwnerRoyalty": "number",
-    "sectionName": "string",
-    "section": "string",
-    "township": "string",
-    "range": "string",
-    "titleSource": "string"
+    "bsonType": "object",
+    "required": [
+        "name",
+        "owner",
+        "legalEntity",
+        "netMineralAcres",
+        "mineralOwnerRoyalty",
+        "section",
+        "township",
+        "range",
+        "titleSource"
+    ],
+    "properties": {
+        "name": {
+            "bsonType": "string"
+        },
+        "owner": {
+            "bsonType": "objectId"
+        },
+        "legalEntity": {
+            "bsonType": "string"
+        },
+        "netMineralAcres": {
+            "bsonType": "number"
+        },
+        "mineralOwnerRoyalty": {
+            "bsonType": "number"
+        },
+        "sectionName": {
+            "bsonType": "string"
+        },
+        "section": {
+            "bsonType": "string"
+        },
+        "township": {
+            "bsonType": "string"
+        },
+        "range": {
+            "bsonType": "string"
+        },
+        "titleSource": {
+            "bsonType": "string"
+        },
+        "fileUrl": {
+            "bsonType": "string"
+        }
+    }
 }
