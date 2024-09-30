@@ -32,10 +32,7 @@
             "bsonType": "string"
         },
         "fileUrl": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "string"
-            }
+            "bsonType": "string"
         }
     }
 }
