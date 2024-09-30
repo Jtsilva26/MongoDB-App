@@ -1,7 +1,30 @@
 {
-    "ownerName": "string",
-    "entityType": "string",
-    "ownerType": "string",
-    "address": "string",
-    "totalLandHoldings": "number"
+    "bsonType": "object",
+    "required": [
+        "ownerName",
+        "entityType",
+        "ownerType",
+        "address",
+        "totalLandHoldings"
+    ],
+    "properties": {
+        "ownerName": {
+            "bsonType": "string"
+        },
+        "entityType": {
+            "bsonType": "string"
+        },
+        "ownerType": {
+            "bsonType": "string"
+        },
+        "address": {
+            "bsonType": "string"
+        },
+        "totalLandHoldings": {
+            "bsonType": "number"
+        },
+        "fileUrl": {
+            "bsonType": "string"
+        }
+    }
 }
