@@ -43,7 +43,7 @@
             "bsonType": "string"
         },
         "fileUrl": {
-            "bsonType": "string"
+            "bsonType": "array"
         }
     }
 }
