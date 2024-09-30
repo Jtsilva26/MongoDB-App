@@ -1,0 +1,19 @@
+{
+    "bsonType": "object",
+    "required": [
+        "ownerId",
+        "fileUrl",
+        "uploadDate"
+    ],
+    "properties": {
+        "ownerId": {
+            "bsonType": "objectId"
+        },
+        "fileUrl": {
+            "bsonType": "string"
+        },
+        "uploadDate": {
+            "bsonType": "date"
+        }
+    }
+}
