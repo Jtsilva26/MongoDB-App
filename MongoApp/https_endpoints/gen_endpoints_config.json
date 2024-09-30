@@ -3,7 +3,8 @@
         "v1"
     ],
     "run_as_user_id": "",
-    "run_as_user_id_script_source": "",
+    "run_as_user_id_script_source": "exports = async function (ownerId, fileUrl) {\n  const mongodb = context.services.get(\"mongodb-atlas\");\n  const ownersCollection = mongodb.db(\"Owners_DB\").collection(\"Owners\");\n  const filesCollection = mongodb.db(\"Owners_DB\").collection(\"File\");\n\n  try {\n    // Update the owner's fileUrl\n    const updateResult = await ownersCollection.updateOne(\n      { _id: new BSON.ObjectId(ownerId) },\n      { $set: { fileUrl } }\n    );\n\n    if (updateResult.modifiedCount === 0) {\n      throw new Error(\"Owner not found\");\n    }\n\n    // Insert the file into the File collection\n    const fileDocument = {\n      ownerId: new BSON.ObjectId(ownerId),\n      fileUrl: fileUrl,\n      uploadDate: new Date(),\n    };\n\n    await filesCollection.insertOne(fileDocument);\n\n    return { success: true, message: \"Owner updated and file uploaded successfully\" };\n  } catch (error) {\n    console.error('Error processing request:', error);\n    throw new Error(\"Internal Server Error\");\n  }\n};\n",
+    "can_evaluate": {},
     "log_function_arguments": false,
     "disabled": false,
     "validation_method": "NO_VALIDATION",
